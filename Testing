@@ -1,47 +1,9 @@
--- Create ScreenGui
-local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Parent = game.CoreGui
-
--- Create Main Frame
-local MainFrame = Instance.new("Frame")
-MainFrame.Parent = ScreenGui
-MainFrame.Size = UDim2.new(0, 350, 0, 200)
-MainFrame.Position = UDim2.new(0.5, -175, 0.5, -100)
-MainFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-MainFrame.BorderSizePixel = 2
-MainFrame.BorderColor3 = Color3.fromRGB(255, 255, 255)
-
--- Create Title
-local Title = Instance.new("TextLabel")
-Title.Parent = MainFrame
-Title.Size = UDim2.new(1, 0, 0, 30)
-Title.BackgroundTransparency = 1
-Title.Text = "Adopt Me Script (Latest Version)"
-Title.TextColor3 = Color3.fromRGB(255, 255, 255)
-Title.Font = Enum.Font.SourceSansBold
-Title.TextSize = 18
-
--- Close Button
-local CloseButton = Instance.new("TextButton")
-CloseButton.Parent = MainFrame
-CloseButton.Size = UDim2.new(0, 30, 0, 30)
-CloseButton.Position = UDim2.new(1, -30, 0, 0)
-CloseButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-CloseButton.Text = "X"
-CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-CloseButton.Font = Enum.Font.SourceSansBold
-CloseButton.TextSize = 18
-
-CloseButton.MouseButton1Click:Connect(function()
-    ScreenGui:Destroy()
-end)
-
--- Function to Create Notifications
+-- Function to Create Notifications in Bottom Right
 local function CreateNotification(title, message, color)
     local Notification = Instance.new("Frame")
     Notification.Parent = ScreenGui
     Notification.Size = UDim2.new(0, 300, 0, 50)
-    Notification.Position = UDim2.new(0.5, -150, 0.1, 0)
+    Notification.Position = UDim2.new(1, -320, 1, -70) -- Bottom Right Corner
     Notification.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
     Notification.BorderSizePixel = 2
     Notification.BorderColor3 = color
@@ -72,60 +34,3 @@ local function CreateNotification(title, message, color)
         Notification:Destroy()
     end)
 end
-
--- Create Activate Button
-local ActivateButton = Instance.new("TextButton")
-ActivateButton.Parent = MainFrame
-ActivateButton.Size = UDim2.new(0.4, 0, 0, 50)
-ActivateButton.Position = UDim2.new(0.05, 0, 0.3, 0)
-ActivateButton.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
-ActivateButton.Text = "(Activate)"
-ActivateButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-ActivateButton.Font = Enum.Font.SourceSansBold
-ActivateButton.TextSize = 18
-
-ActivateButton.MouseButton1Click:Connect(function()
-    CreateNotification("✅ Successfully Run!", "Please make sure you have a good PC to run this script perfectly!", Color3.fromRGB(0, 255, 0))
-end)
-
--- Create Disable Button
-local DisableButton = Instance.new("TextButton")
-DisableButton.Parent = MainFrame
-DisableButton.Size = UDim2.new(0.4, 0, 0, 50)
-DisableButton.Position = UDim2.new(0.55, 0, 0.3, 0)
-DisableButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-DisableButton.Text = "(Disable)"
-DisableButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-DisableButton.Font = Enum.Font.SourceSansBold
-DisableButton.TextSize = 18
-
-DisableButton.MouseButton1Click:Connect(function()
-    CreateNotification("❌ Script Disabled!", "The script has been turned off!", Color3.fromRGB(255, 0, 0))
-end)
-
--- Create Anti-Ban Button
-local AntiBanButton = Instance.new("TextButton")
-AntiBanButton.Parent = MainFrame
-AntiBanButton.Size = UDim2.new(0.9, 0, 0, 50)
-AntiBanButton.Position = UDim2.new(0.05, 0, 0.6, 0)
-AntiBanButton.BackgroundColor3 = Color3.fromRGB(255, 255, 0)
-AntiBanButton.Text = "(Anti-Banned Bypass)"
-AntiBanButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-AntiBanButton.Font = Enum.Font.SourceSansBold
-AntiBanButton.TextSize = 18
-
-AntiBanButton.MouseButton1Click:Connect(function()
-    CreateNotification("✅ Anti-Banned Success!", "Anti-Banned protection has been activated! Your account is safe now.", Color3.fromRGB(0, 255, 0))
-end)
-
--- Create Footer Label
-local FooterLabel = Instance.new("TextLabel")
-FooterLabel.Parent = MainFrame
-FooterLabel.Size = UDim2.new(1, 0, 0, 30)
-FooterLabel.Position = UDim2.new(0, 0, 0.85, 0)
-FooterLabel.BackgroundTransparency = 1
-FooterLabel.Text = "By: @notcrazy0006"
-FooterLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-FooterLabel.Font = Enum.Font.SourceSansBold
-FooterLabel.TextSize = 14
-FooterLabel.TextTransparency = 0.5
